@@ -1,5 +1,7 @@
 package linkedlist;
 
+import sun.awt.X11.ListHelper;
+
 /**
  * Created by maksimustinov on 8/31/14.
  */
@@ -35,6 +37,14 @@ public class LinkedListDriver {
         System.out.println("Inserting 'z' to the front...");
         head = LinkedListHelper.insertInFront(head, "z");
 
+        LinkedListHelper.show(head);
+
+
+        /**
+         * Deleting
+         */
+        System.out.println("Removing first element");
+        LinkedListHelper.delete(head, listElement2);
         LinkedListHelper.show(head);
 
     }

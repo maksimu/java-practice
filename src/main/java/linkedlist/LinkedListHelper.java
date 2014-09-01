@@ -36,12 +36,28 @@ public class LinkedListHelper {
          * Special case to handle first element
          */
         if(headElement == elementToRemove){
-
+            currElement = currElement.getNext();
+            return true;
         }
 
+        /**
+         * Regular removal of non-head elements
+         */
+         while(currElement != null){
+
+             if(currElement.getNext() == elementToRemove){
+                 currElement.getNext().setNext(elementToRemove.getNext());
+                 return true;
+             }
+
+             currElement = currElement.getNext();
+         }
 
 
-
+        /**
+         * Element to remove was not found
+         */
+        return false;
     }
 
     public static void show(ListElement headElement){
