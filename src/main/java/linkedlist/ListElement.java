@@ -28,6 +28,10 @@ public class ListElement<T> {
         this.data = value;
     }
 
+    @Override
+    public String toString(){
+        return this.getClass().getName() + "=[" + data + "]";
+    }
 
 
 }

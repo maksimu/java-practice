@@ -24,6 +24,21 @@ public class LinkedListHelper {
         return currElement;
     }
 
+
+    public static int sizeOfNext(ListElement headElement){
+        int size = 0;
+
+        ListElement currElement = headElement;
+
+        while(currElement != null && currElement.getNext() != null){
+            size++;
+            currElement = currElement.getNext();
+        }
+
+        return size;
+    }
+
+
     public static boolean delete(ListElement headElement, ListElement elementToRemove){
 
         if(headElement == null){
@@ -46,7 +61,7 @@ public class LinkedListHelper {
          while(currElement != null){
 
              if(currElement.getNext() == elementToRemove){
-                 currElement.getNext().setNext(elementToRemove.getNext());
+                 currElement.setNext(elementToRemove.getNext());
                  return true;
              }
 
@@ -63,7 +78,7 @@ public class LinkedListHelper {
     public static void show(ListElement headElement){
         ListElement currElement = headElement;
         do{
-            System.out.println(currElement.value());
+            System.out.println(currElement + "-> " + currElement.getNext());
 
             currElement = currElement.getNext();
         } while(currElement != null);

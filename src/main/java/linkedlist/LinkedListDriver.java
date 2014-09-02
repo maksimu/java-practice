@@ -43,9 +43,13 @@ public class LinkedListDriver {
         /**
          * Deleting
          */
-        System.out.println("Removing first element");
-        LinkedListHelper.delete(head, listElement2);
+        System.out.println("Total elements in head: " + LinkedListHelper.sizeOfNext(head));
+        ListElement elementToRemove = listElement2;
+        System.out.println("Removing first element" + elementToRemove);
+        LinkedListHelper.delete(head, elementToRemove);
         LinkedListHelper.show(head);
+        System.out.println("Total elements in head: " + LinkedListHelper.sizeOfNext(head));
+
 
     }
 }
