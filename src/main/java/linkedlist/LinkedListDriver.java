@@ -40,7 +40,7 @@ public class LinkedListDriver {
         LinkedListHelper.show(head);
 
 
-        /**
+        /*
          * Deleting
          */
         System.out.println("Total elements in head: " + LinkedListHelper.sizeOfNext(head));
@@ -50,6 +50,15 @@ public class LinkedListDriver {
         LinkedListHelper.show(head);
         System.out.println("Total elements in head: " + LinkedListHelper.sizeOfNext(head));
 
+
+        /*
+         * Find Mth element
+         */
+        int mthElementIndex = 2;
+
+        System.out.println("\n\nFinding [" + mthElementIndex + "]th element.");
+        ListElement mthElement = LinkedListHelper.findMthElement(head, mthElementIndex);
+        System.out.println("Found [" + mthElement + "]");
 
     }
 }
