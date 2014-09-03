@@ -44,7 +44,7 @@ public class BinaryTreeDriver {
         System.out.println(" Recursion search result            : " + NodeHelper.findNodeRecursively(root8, newVal2).getValue());
 
         int newVal3 = 123;
-        root8 = nodeHelper.insert(root8, newVal3);
+        Node root8_error_insertion = nodeHelper.insert(root8, newVal3);
 
         if(root8 == null){
             System.out.println("Was no able to insert");
@@ -52,6 +52,8 @@ public class BinaryTreeDriver {
             System.out.println(" Recursion search result            : " + NodeHelper.findNodeRecursively(root8, newVal3).getValue());
         }
 
+
+        nodeHelper.breadFistSearch(root8, 123);
 
     }
 }

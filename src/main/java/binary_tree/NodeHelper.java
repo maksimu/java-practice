@@ -1,5 +1,8 @@
 package binary_tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by maksimustinov on 9/1/14.
  */
@@ -63,5 +66,53 @@ public class NodeHelper {
         }
 
         return root;
+    }
+
+
+    /**
+     * Search: Breadth-First Search (BFS)
+     */
+    public Node breadFistSearch(Node root, int key){
+
+        List<Node> queue = new ArrayList<Node>();
+
+        queue.add(root);
+
+        while(queue.size() > 0){
+
+            List<Node> tempQueue = new ArrayList<Node>();
+            for(Node n : queue){
+                System.out.print(n);
+
+                if(n!=null) {
+                    if (n.getValue() == key) {
+                        System.out.print(" <-- Found");
+                        return n;
+                    }
+
+
+                    tempQueue.add(n.getLeftChildren());
+                    tempQueue.add(n.getRightChildren());
+                }
+            }
+
+            queue.clear();
+
+            for(Node n : tempQueue){
+                queue.add(n);
+            }
+
+            System.out.println();
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Search: Depth-First Search (DFS)
+     */
+    public Node depthFirstSearch(Node node){
+        return null;
     }
 }
