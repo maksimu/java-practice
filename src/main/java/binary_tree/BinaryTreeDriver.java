@@ -55,5 +55,9 @@ public class BinaryTreeDriver {
 
         nodeHelper.breadFistSearch(root8, 123);
 
+        System.out.println("\n\n\nDFS");
+        Node found = nodeHelper.depthFirstSearch(root8, 123);
+        System.out.println("Found: " + found);
+
     }
 }
