@@ -109,4 +109,68 @@ public class StringHelper {
                 destination);
 
     }
+
+
+    /**
+     * Reverse Words
+     *
+     * PROBLEM Write a function that reverses the order of the words in a string. For example, your function should
+     * transform the string "Do or do not, there is no try." to "try. no is there not, do or Do". Assume that all words
+     * are space delimited and treat punctuation the same as letters.
+     *
+     * Excerpt From: Noah Kindler. “Programming Interviews Exposed.” iBooks. https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewBook?id=454DDAD36D7B5156322885BEAE13B948
+     *
+     * @param s Sentence to reverse
+     * @return
+     */
+
+    public static String reverseWordM0(String s){
+
+        String[] sArr = s.split("\\b");
+
+        StringBuilder sb = new StringBuilder();
+
+        for(int i = sArr.length -1; i >= 0; i--){
+            sb.append(sArr[i]);
+        }
+
+        return sb.toString();
+    }
+
+    public static String reverseWordsM1(String s){
+
+        char[] sentence = s.toCharArray();
+
+        int wordBeginPosition = 0;
+
+        for(int i = sentence.length-1; i >= 0; i--){
+
+            if(sentence[i] != ' '){
+            }
+
+
+
+            System.out.print("[" + sentence[i] + "]");
+        }
+
+
+        return null;
+    }
+
+
+
+
+    public static String reverseWord(String w){
+        char[] word = w.toCharArray();
+        char[] drow = new char[word.length];
+
+        int lastIndex = word.length-1;
+
+        for(int i = lastIndex; i >= 0; i--){
+            drow[lastIndex-i] = word[i];
+        }
+
+        return new String(drow);
+    }
+
 }
