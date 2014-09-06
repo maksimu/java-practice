@@ -1,9 +1,9 @@
-package helper;
+package arrays;
 
 /**
  * Created by maksimustinov on 9/1/14.
  */
-public class Helper {
+public class ArrayHelper {
 
 
     public static int[] randomArray(int size){
