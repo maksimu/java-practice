@@ -59,5 +59,22 @@ public class BinaryTreeDriver {
         Node found = nodeHelper.depthFirstSearch(root8, 123);
         System.out.println("Found: " + found);
 
+
+        System.out.println("\n\n\nHeight of a tree");
+        int height = nodeHelper.heightOfATree(root8);
+        System.out.println("Height: " + height);
+
+        System.out.println("\n\n\nTraversal: Inorder");
+        nodeHelper.traversalInOrder(root8);
+
+
+        System.out.println("\n\n\nTraversal: Preorder");
+        nodeHelper.traversalPreOrder(root8);
+
+        System.out.println("\n\n\nTraversal: Postorder");
+        nodeHelper.traversalPostOrder(root8);
+
+        System.out.println("\n\n\nTraversal: Preoder - non-recursive");
+        nodeHelper.traversalPreOrder_nonrecursion(root8);
     }
 }

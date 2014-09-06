@@ -72,4 +72,8 @@ public class Node {
     public String toString(){
         return "[" + this.getValue() + "]";
     }
+
+    public void print(){
+        System.out.println(this.toString());
+    }
 }
