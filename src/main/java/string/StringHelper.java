@@ -111,7 +111,7 @@ public class StringHelper {
     }
 
 
-    /**
+    /*
      * Reverse Words
      *
      * PROBLEM Write a function that reverses the order of the words in a string. For example, your function should
@@ -124,7 +124,12 @@ public class StringHelper {
      * @return
      */
 
-    public static String reverseWordM0(String s){
+    /**
+     * Reverse sentence using Java Utils API
+     * @param s
+     * @return
+     */
+    public static String reverseWordJavaUtils(String s){
 
         String[] sArr = s.split("\\b");
 
@@ -137,40 +142,113 @@ public class StringHelper {
         return sb.toString();
     }
 
-    public static String reverseWordsM1(String s){
+    /**
+     * Reverse sentence using low lever Java code (arrays) -
+     *
+     * Complexity: O(M*N*K) TODO Improve to O(M*N)
+     * @param s
+     * @return
+     */
+    public static String reverseWordsArrayManip_NO_ALGORIGHTM(String s){
 
         char[] sentence = s.toCharArray();
+        char[] ecnetnes = new char[sentence.length];
+        int ecnetnesCursor = 0;
+        int lenght = sentence.length;
 
-        int wordBeginPosition = 0;
+        int wordBeginIndex;
+        int wordEndIndex = lenght-1;
 
-        for(int i = sentence.length-1; i >= 0; i--){
+        for(int invIndex = lenght-1; invIndex >= 0; invIndex--){
 
-            if(sentence[i] != ' '){
+            if(sentence[invIndex] == ' ' || invIndex == 0){
+                // TODO Replace with the if-else shortcut
+                if(invIndex == 0)                                          // we are at the beginning of the array, so there is no space in front.
+                    wordBeginIndex = invIndex;
+                else
+                    wordBeginIndex = invIndex + 1;                          // we are at the space, adding one to the beginning of the word
+
+                int thisWordSize = (wordEndIndex - wordBeginIndex) + 1;     // endIndex - beginIndex will be always one less then the size. That's why +1
+                char[] temp = new char[thisWordSize];                       // TODO Figure out how to eliminate this
+
+                for(int ss = 0; ss < thisWordSize; ss++){
+                    temp[ss] = sentence[wordBeginIndex+ss];
+                }
+
+                int tempSizeCount = 0;
+
+                while(tempSizeCount < thisWordSize){                        // copy current word to ecnetnes array
+                    ecnetnes[ecnetnesCursor++] = temp[tempSizeCount];
+                    tempSizeCount++;
+                }
+                wordEndIndex = invIndex - 1;
             }
-
-
-
-            System.out.print("[" + sentence[i] + "]");
         }
 
-
-        return null;
+        return new String (ecnetnes);
     }
 
 
 
 
-    public static String reverseWord(String w){
-        char[] word = w.toCharArray();
-        char[] drow = new char[word.length];
 
-        int lastIndex = word.length-1;
+    public static String recursiveWordInverse(String str) {
+        char charArray[] = str.toCharArray();
 
-        for(int i = lastIndex; i >= 0; i--){
-            drow[lastIndex-i] = word[i];
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] == ' ') {
+                return recursiveWordInverse(str.substring(i + 1)) + str.substring(0, i) + " ";
+
+            }
+        }
+        return str + " ";
+    }
+
+
+    /**
+     * Not finished. Here I tried to elimnate temp variable.
+     * Now here "//   txet[curPosition] = " I need to try to swap letters from the end of the letter and beginning and navigate towards the center
+
+     * @param s
+     * @return
+     */
+    public static String reverseWordsArrayManip_WIHT_ALGORITHM(String s){
+
+        char[] txet = reverseWord(s.toCharArray());
+
+        int end = 0;
+        int length = txet.length;
+
+        while (end < length){
+            if(txet[end] == ' '){
+
+                int startIndex = length - (length - end);
+                int endIndex = end-1;
+                int numOfLetters = end-startIndex+1;
+
+                int curPosition = startIndex;
+                while(curPosition <= endIndex){
+//                    txet[curPosition] =
+                }
+            }
+
+            end++;
         }
 
-        return new String(drow);
+        return null;
+    }
+
+
+    public static char[] reverseWord(char[] text){
+        char[] txet = new char[text.length];
+
+        int lastIndex = text.length-1;
+
+        for(int i = lastIndex; i >= 0; i--){
+            txet[lastIndex-i] = text[i];
+        }
+
+        return txet;
     }
 
 }

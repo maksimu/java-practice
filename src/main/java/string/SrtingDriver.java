@@ -11,15 +11,22 @@ public class SrtingDriver {
         String s = StringHelper.removeChars("aabcdeefg", "abcde");
         System.out.println(s);
 
-        System.out.println("\n\n--- REVERSE WORDS");
-        String sentence = "All files are up-to-date";
-        String m0 = StringHelper.reverseWordM0(sentence);
+        System.out.println("\n\n--- REVERSE WORDS (Java Utils)");
+        String sentence = "One Two Three";
+        String m0 = StringHelper.reverseWordJavaUtils(sentence);
         System.out.println("M0 Orig: " + sentence);
         System.out.println("M0 Rev : " + m0);
 
-        System.out.println("\n\n--- REVERSE LETTERS IN A WORD");
-        String revWord = StringHelper.reverseWord("Maksim");
-        System.out.println("REV: " + revWord);
+        System.out.println("\n\n--- REVERSE WORDS (Array Manipulation)");
+        String m1 = StringHelper.recursiveWordInverse(sentence);
+        System.out.println("M1 Orig: " + sentence);
+        System.out.println("M1 Rev : " + m1);
+
+        System.out.println("\n\n--- REVERSE WORDS (Array Manipulation + Recursion)");
+        String m2 = StringHelper.reverseWordsArrayManip_WIHT_ALGORITHM(sentence);
+        System.out.println("M2 Orig: " + sentence);
+        System.out.println("M2 Rev : " + m2);
+
 
     }
 }
