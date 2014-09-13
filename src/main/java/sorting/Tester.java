@@ -21,9 +21,16 @@ public class Tester {
 
         Sort insertSort = new InsertionSort();
 
+//        System.out.println("Before sort: " + arrayToString(array));
+//        insertSort.sort(array);
+//        System.out.println("After sort : " + arrayToString(array));
+
+        
+        InsertionSort2 insertSort2 = new InsertionSort2();
         System.out.println("Before sort: " + arrayToString(array));
-        insertSort.sort(array);
-        System.out.println("After sort : " + arrayToString(array));
+        int[] sorted = insertSort2.insertSearch(array);
+        System.out.println("After sort : " + arrayToString(sorted));
+
     }
 
     public static String arrayToString(int[] array){

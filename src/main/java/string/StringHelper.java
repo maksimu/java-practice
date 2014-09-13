@@ -228,6 +228,7 @@ public class StringHelper {
 
                 int curPosition = startIndex;
                 while(curPosition <= endIndex){
+
 //                    txet[curPosition] =
                 }
             }
@@ -250,5 +251,29 @@ public class StringHelper {
 
         return txet;
     }
+
+
+    /**
+     * String to Numeric Conversion
+     */
+    public static Integer stringToNumberic(String numStr){
+
+        return null;
+    }
+
+
+//    public static void stringPermutation(String str){
+//
+//
+//        int currentPosition = 0;
+//
+//        for(int i = 0; i < str.length() - 2; i++){
+//
+//            if()
+//            System.out.print(str.charAt(i));
+//        }
+//
+//
+//    }
 
 }
