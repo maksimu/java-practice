@@ -27,6 +27,11 @@ public class SrtingDriver {
         System.out.println("M2 Orig: " + sentence);
         System.out.println("M2 Rev : " + m2);
 
+        System.out.println("\n\n--- REVERSE");
+        String w1 = StringHelper.reverse(sentence);
+        System.out.println("W1 Orig: " + sentence);
+        System.out.println("W1 Rev : " + w1);
+
 
     }
 }

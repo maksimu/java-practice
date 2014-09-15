@@ -5,31 +5,31 @@ package linkedlist;
  */
 public class ListElement<T> {
 
-    private T           data;
+    private T data;
     private ListElement<T> nextElement;
 
-    public ListElement(T data){
+    public ListElement(T data) {
         this.data = data;
     }
 
-    public ListElement<T> getNext(){
+    public ListElement<T> getNext() {
         return nextElement;
     }
 
-    public T value(){
+    public T value() {
         return data;
     }
 
-    public void setNext(ListElement<T> nextElement){
+    public void setNext(ListElement<T> nextElement) {
         this.nextElement = nextElement;
     }
 
-    public void setValue(T value){
+    public void setValue(T value) {
         this.data = value;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.getClass().getName() + "=[" + data + "]";
     }
 
