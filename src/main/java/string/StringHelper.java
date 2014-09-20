@@ -306,6 +306,37 @@ public class StringHelper {
         return sb.toString();
     }
 
+    public static int findFirstNonRepeatedCharacter2(String text){
+
+        HashMap<Character, Integer> lettersMap = new HashMap<Character, Integer>();
+
+        char[] charArray = text.toCharArray();
+        int charSize = charArray.length;
+
+        // First scan all characters and place their count into HashMap
+        for(int i=0; i < charSize - 1; i++){
+            char curChar = charArray[i];
+
+            if(lettersMap.containsKey(curChar)){
+                lettersMap.put(curChar, lettersMap.get(curChar)+1);
+            } else {
+                lettersMap.put(curChar, 1);
+            }
+        }
+
+        // Second scan to find a duplicate
+        for(int j=0; j<charSize;j++){
+            char curLetter = charArray[j];
+
+            if(lettersMap.get(curLetter) == 1){
+                return j;
+            }
+        }
+
+        // not found
+        return -1;
+    }
+
 //    public static void stringPermutation(String str){
 //
 //
