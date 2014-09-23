@@ -9,4 +9,20 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>algs4</groupId>
+            <artifactId>com.algs4</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/algs4.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>stdlib</groupId>
+            <artifactId>com.stdlib</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/stdlib.jar</systemPath>
+        </dependency>
+    </dependencies>
 </project>
