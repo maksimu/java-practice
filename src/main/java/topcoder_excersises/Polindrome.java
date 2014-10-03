@@ -55,10 +55,50 @@ public class Polindrome {
 
     static class Transform{
 
+
+
         public int palindrome(int N){
-            return -1;
+
+            int rN = reverseDigits(N);
+
+
+            while (!isPalindrome(N)) {
+
+                int oldN = N;
+                N = oldN + rN;
+                rN = reverseDigits(N);
+
+                System.out.println(oldN + "+" + rN + "=" + N + "\t(not a palindrome)");
+
+
+                if(N > 1000000000){
+
+                    System.err.println("[" + N + "] is not a palindrome");
+                    return -1;
+                }
+            }
+
+            return N;
         }
 
+
+        private int reverseDigits(int N){
+            char[] chars = String.valueOf(N).toCharArray();
+
+            int mid = (0 + chars.length) >>> 1;
+            for(int i = 0; i < mid; i++){
+
+                char temp = chars[i];
+                chars[i] = chars[(chars.length-1)-i];
+                chars[(chars.length-1)-i]=temp;
+            }
+
+            // Casting to long to avoid MAX_INT.
+            // Value might rich up to 6,952,014,971 where as int only holds 2,147,483,647
+            Long revN = Long.parseLong(new String(chars));
+
+            return revN.intValue();
+        }
 
         private boolean isPalindrome(int N){
 
@@ -71,7 +111,7 @@ public class Polindrome {
                 char a = chars[i];
                 char b = chars[(chars.length-1)-i];
 
-                System.out.println(chars[i]);
+//                System.out.println(chars[i]);
 
                 if(a != b){
                     return false;
@@ -88,8 +128,9 @@ public class Polindrome {
 
 
         Transform transform = new Transform();
-        System.out.println("Is a palindrome: " + transform.isPalindrome(1001));
-
+//        System.out.println("Is a palindrome: " + transform.isPalindrome(1001));
+//        System.out.println("Reverse digit  : " + transform.reverseDigits(987));
+        System.out.println("RESULT --> " + transform.palindrome(1267));
     }
 
 }
