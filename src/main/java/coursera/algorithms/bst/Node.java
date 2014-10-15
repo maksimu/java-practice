@@ -6,14 +6,14 @@ import lombok.Data;
  * Created by maksimustinov on 10/1/14.
  */
 @Data
-public class Node {
+public class Node<Key extends Comparable<Key>> {
 
-    int key;
-    String value;
-    Node leftNode;
-    Node rightNode;
+    private Key key;
+    private String value;
+    private Node<Key> leftNode;
+    private Node<Key> rightNode;
 
-    public Node(int key, String value){
+    public Node(Key key, String value){
         this.key = key;
         this.value = value;
     }
