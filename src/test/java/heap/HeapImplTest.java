@@ -24,7 +24,6 @@ public class HeapImplTest {
         heap.insert(4);
         heap.insert(2);
 
-
         System.out.println();
 
         heap.insert(12);
